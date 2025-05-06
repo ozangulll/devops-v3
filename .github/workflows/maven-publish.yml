@@ -46,3 +46,12 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/app:latest
+
+      - name: Copy JAR to EC2 using SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: target/*.jar
+          target: /home/${{ secrets.EC2_USER }}/app/
