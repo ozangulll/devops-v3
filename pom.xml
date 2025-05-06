@@ -50,6 +50,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<finalName>devops-v3</finalName>  <!-- Set the desired JAR file name here -->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
