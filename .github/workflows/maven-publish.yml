@@ -56,15 +56,16 @@ jobs:
           source: target/*.jar
           target: /home/${{ secrets.EC2_USER }}/app/
 
-      - name: Run JAR on EC2 instance
+      - name: Run JAR on EC2 using tmux
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            pkill -f 'java -jar' || true
+            sudo yum install -y tmux || sudo apt install -y tmux
+            tmux kill-session -t jar || true
             cd /home/${{ secrets.EC2_USER }}/app/target
-            nohup java -jar devops-v3.jar > ~/app.log 2>&1 &
-            disown
+            tmux new-session -d -s jar "java -jar devops-v3.jar > ~/app.log 2>&1"
+      
           
