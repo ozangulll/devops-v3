@@ -5,7 +5,7 @@ FROM eclipse-temurin:17-jre
 WORKDIR /app
 
 # Copy the local JAR file to the container
-COPY ./target/devops-v3.jar.jar /app/devops-v3.jar
+COPY ./target/devops-v3.jar /app/devops-v3.jar
 
 # Run the JAR file when the container starts
 CMD ["java", "-jar", "devops-v3.jar"]
