@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .glow-text {
+            font-size: 2.5rem;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 30px #00f;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #00f, 0 0 40px #0ff;
+            }
+        }
+
+        .about-content {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="glow-text">About Us</div>
+<div class="about-content">
+    <p>Welcome to our DevOps V3 project! We are dedicated to delivering top-notch solutions with cutting-edge technologies. Our goal is to streamline operations and ensure that everything runs smoothly, securely, and efficiently. Stay tuned for more updates!</p>
+</div>
+</body>
+</html>

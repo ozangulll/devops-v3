@@ -45,7 +45,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-v3:latest
 
       - name: Copy devops-v3.jar to EC2 using SCP
         uses: appleboy/scp-action@v0.1.7
